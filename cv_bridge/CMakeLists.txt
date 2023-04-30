@@ -18,7 +18,10 @@ find_package(Boost REQUIRED)
 endif()
 
 set(_opencv_version 4)
-find_package(OpenCV 4 QUIET)
+find_package(OpenCV 4.5.0 EXACT REQUIRED
+  PATHS /home/roque/Gits/opencv/build
+  NO_DEFAULT_PATH
+)
 if(NOT OpenCV_FOUND)
   message(STATUS "Did not find OpenCV 4, trying OpenCV 3")
   set(_opencv_version 3)

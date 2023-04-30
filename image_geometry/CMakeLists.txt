@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.0.2)
 project(image_geometry)
 
 find_package(catkin REQUIRED sensor_msgs)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4.5.0 EXACT REQUIRED
+  PATHS /home/roque/Gits/opencv/build
+  NO_DEFAULT_PATH
+)
 
 catkin_package(CATKIN_DEPENDS sensor_msgs
                DEPENDS OpenCV
